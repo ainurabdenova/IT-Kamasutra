@@ -1,35 +1,91 @@
-.App {
+.Wrapper {
+  width: 1200px;
   margin: 0 auto;
   display: grid;
-  width: 1200px;
-  grid-template-areas:
-    "h h "
-    "n c ";
-
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 0px; */
-}
+  /* grid-gap: 10px; */
 
+  grid-template-areas:
+    "h h"
+    "n c";
+}
 
 .header {
   grid-area: h;
-  background-color: #ab773a;
+  background-color: #3565b8;
 }
 
 .header img {
-  width: 30px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-
+  width: 40px;
+  border-radius: 50%;
 }
 
 .nav {
   grid-area: n;
-  background-color: #9dab3a;
+  background-color: #59669c;
+  padding: 20px;
 }
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav a.active {
+  color: gold;
+}
+
 
 .content {
   grid-area: c;
-  background-color: #aadeab;
+  background-color: #96a9e3;
+}
+
+.mypost img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.dialogs-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+
+.dialogs {
+  padding: 10px;
+}
+
+.dialogs a {
+  text-decoration: none;
+}
+
+.dialogs a.active {
+  color: gold;
+}
+
+.dialog {}
+
+.messages {
+  padding: 10px;
+}
+
+.message {}
+
+.discription-block {
+  padding: 10px;
+}
+
+.myPosts-block {
+  padding: 10px;
+}
+
+.myposts-button {
+  padding: 5px;
+}
+
+.mypost {
+  margin-top: 10px;
 }

@@ -1,15 +1,27 @@
 import './App.css';
-import { Header } from './components/Header';
-import { NavBAr } from './components/NavBAr';
-import { Profile } from './components/Profile';
+import Dialogs from './components/dialogs/Dialogs';
+import { Header } from './components/header/Header';
+import { Navbar } from './components/navbar/Navbar';
+import { Profile } from './components/profile/Profile';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <NavBAr />
-      <Profile />
-    </div>
+    <BrowserRouter>
+      <div className="Wrapper">
+        <Header />
+        <Navbar />
+        <div className='content'>
+          <Routes>
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/dialogs/*' element={<Dialogs />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
