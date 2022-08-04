@@ -1,7 +1,10 @@
 import React from 'react';
 import Post from './Posts/Post';
+import { state } from '../../const/state';
 
 const MyPosts = () => {
+
+
     return (
         <div className='myPosts-block'>
             <h3>My posts</h3>
@@ -16,8 +19,7 @@ const MyPosts = () => {
 
             </div>
             <div>
-                <Post message='Hi how are u?' likeCount='20' />
-                <Post message="It's my first post" likeCount='30' />
+                {state.posts.map(post => <Post message={post.message} likeCount={post.likeCount} />)}
             </div>
         </div>
     );

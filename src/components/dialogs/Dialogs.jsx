@@ -1,38 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import DialogItem from './dialogItem/DialogItem';
+import Message from './messages/Message';
+import { state } from '../const/state';
 
-
-const DialogItem = ({ itemName, id }) => {
-
-
-    return (
-        <div className='dialog'>
-            <NavLink to={`/dialogs/${id}`}>{itemName}</NavLink>
-        </div >
-    )
-}
-
-const Message = ({ message }) => {
-    return (
-        <div className="message">{message}</div>
-    )
-}
 
 const Dialogs = () => {
+
     return (
         <div className='dialogs-wrapper'>
             <div className='dialogs'>
-                <DialogItem itemName='Ainur' id='1' />
-                <DialogItem itemName='Rustem' id='2' />
-                <DialogItem itemName='Snezhok' id='3' />
-                <DialogItem itemName='Dmitryi' id='4' />
+                {state.dialogs.map(dialog => <DialogItem itemName={dialog.name} id={dialog.id} />)}
             </div>
             <div className='messages'>
-                <Message message='Hi' />
-                <Message message='How are u?' />
-                <Message message=':))' />
-                <Message message='Yoo' />
-                <Message message='Yoooo' />
+                {state.messages.map(mes => <Message message={mes.message} id={mes.id} />)}
             </div>
         </div>
     );
