@@ -4,17 +4,27 @@ import { state } from '../../const/state';
 
 const MyPosts = () => {
 
+    const ref = React.createRef()
+
+    const AddPost = () => {
+        let text = ref.current.value
+        alert(text)
+    }
+
+    const DeletePost = () => {
+
+    }
 
     return (
         <div className='myPosts-block'>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={ref}></textarea>
                 </div>
                 <div className='myposts-button'>
-                    <button>Add posts</button>
-                    <button>Delete posts</button>
+                    <button onClick={AddPost}>Add posts</button>
+                    <button onClick={DeletePost}>Delete posts</button>
                 </div>
 
             </div>
